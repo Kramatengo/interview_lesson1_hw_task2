@@ -1,29 +1,30 @@
 package ru.alexander_kramarenko.refactoring.no_interface;
 
-public class Car {
+public class Moto {
+
     private String model;
     private int speed;
-    private boolean onTheWay;
+    private boolean busy;
 
     public String getModel() {
         return model;
     }
 
-    public Car(String model, int speed) {
+    public Moto(String model, int speed) {
         this.model = model;
         this.speed = speed;
     }
 
-    public void move() {
-        onTheWay = true;
+    public void ride() {
+        busy = true;
     }
 
     public void stop() {
-        onTheWay = false;
+        busy = false;
     }
 
-    public boolean isOnTheWay() {
-        return onTheWay;
+    public boolean isBusy() {
+        return busy;
     }
 
 
