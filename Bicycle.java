@@ -1,35 +1,42 @@
 package ru.alexander_kramarenko.refactoring.interface_based;
 
-public class Car implements Transport {
+public class Bicycle implements Transport {
     private String model;
     private int speed;
-    private boolean onTheWay;
-
+    private boolean busy;
 
     @Override
     public String getModel() {
         return model;
     }
 
-    public Car(String model, int speed) {
+    public int getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public boolean isOnTheWay() {
+        return busy;
+    }
+
+
+    public Bicycle(String model, int speed) {
         this.model = model;
         this.speed = speed;
     }
 
     @Override
     public void move() {
-        onTheWay = true;
+        busy = true;
     }
 
     @Override
     public void stop() {
-        onTheWay = false;
+        busy = false;
     }
 
-    @Override
-    public boolean isOnTheWay() {
-        return onTheWay;
+    public boolean isBusy() {
+        return busy;
     }
-
 
 }

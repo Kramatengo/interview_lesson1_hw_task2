@@ -1,9 +1,10 @@
 package ru.alexander_kramarenko.refactoring.interface_based;
 
-public class Car implements Transport {
+public class Moto implements Transport {
+
     private String model;
     private int speed;
-    private boolean onTheWay;
+    private boolean busy;
 
 
     @Override
@@ -11,24 +12,24 @@ public class Car implements Transport {
         return model;
     }
 
-    public Car(String model, int speed) {
+    public Moto(String model, int speed) {
         this.model = model;
         this.speed = speed;
     }
 
     @Override
     public void move() {
-        onTheWay = true;
+        busy = true;
     }
 
     @Override
     public void stop() {
-        onTheWay = false;
+        busy = false;
     }
 
     @Override
     public boolean isOnTheWay() {
-        return onTheWay;
+        return busy;
     }
 
 
